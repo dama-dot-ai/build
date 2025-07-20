@@ -48,3 +48,10 @@ if not st.session_state.logged_in:
     login_screen()
 else:
     main_screen()
+    # Render chat input at the bottom
+user_prompt = st.chat_input("Ask a question about this data...")
+if user_prompt:
+    st.chat_message("user").write(user_prompt)
+
+    # Placeholder GPT response — later will integrate actual LLM
+    st.chat_message("assistant").write("Let me analyze that for you... 🧠")
